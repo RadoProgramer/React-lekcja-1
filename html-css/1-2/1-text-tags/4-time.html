@@ -1,0 +1,33 @@
+<p>
+  Date:
+  <time datetime="2024-02-07">
+    7 Feb 20:15
+  </time>
+</p>
+
+<p>
+  Date:
+  <time datetime="2024-02-07T20:15:45.959Z">
+    7 Feb 20:15
+  </time>
+</p>
+
+
+
+<p>
+  <time id="timer" datetime="2024-02-07T20:15:45.959Z">
+    2024-02-07T20:15:45.959Z
+  </time>
+</p>
+
+<script>
+  const timer = document.querySelector("#timer");
+
+  setInterval(() => {
+    const date = new Date();
+    timer.textContent = date.toDateString() + " " + date.toTimeString();
+    timer.setAttribute("datetime", date.toISOString());
+    console.log(date.getTime());
+  }, 500);
+
+</script>
