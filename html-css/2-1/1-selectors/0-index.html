@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1>Witam na moim blogu!</h1>
+
+  <article>
+    <h2 class="epic">Super artykuł.</h2>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, exercitationem dolores odit officia tempore quam porro voluptates temporibus enim similique rem hic. Laboriosam corrupti, at voluptatibus nam quae architecto quisquam?
+    </p>
+  </article>
+
+  <article>
+    <h2 class="sponsored epic">Super artykuł. <span>(sponorowany)</span></h2>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, exercitationem dolores odit officia tempore quam porro voluptates temporibus enim similique rem hic. Laboriosam corrupti, at voluptatibus nam quae architecto quisquam?
+    </p>
+  </article>
+
+  <article>
+    <h2 id="last-article" class="smol">Super artykuł.</h2>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, exercitationem dolores odit officia tempore quam porro voluptates temporibus enim similique rem hic. Laboriosam corrupti, at voluptatibus nam quae architecto quisquam?
+    </p>
+  </article>
+
+  <style>
+    /* footer p {
+      color: blue;
+    } */
+    footer > p {
+      color: blue;
+    }
+  </style>
+  <footer>
+    <h3>O autorze</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, enim, illum quia repellat ex voluptatem id iure atque dolorem ipsum quisquam maxime, quo dolorum facere optio? Quam reprehenderit inventore voluptates.
+    </p>
+    <div>
+      <p>Inner paragraph.</p>
+    </div>
+    <a href="www.google.com" title="Gugjel">Google</a>
+    <a href="www.youtube.com" title="Jutup">YouTube</a>
+    <a href="www.reddit.com">Reddit</a>
+  </footer>
+
+  <h1 class="ewakuejszyn">Zaraz wracam :D</h1>
+</body>
+</html>

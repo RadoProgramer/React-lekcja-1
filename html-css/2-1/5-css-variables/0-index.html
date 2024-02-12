@@ -1,0 +1,68 @@
+<html data-theme="light">
+<!-- <link rel="stylesheet" href="./dark.css"> -->
+
+<style>
+  :root {
+    --text-dupa: 64px;
+    --bg-color: bisque;
+  }
+
+  button {
+    --pad: 12px 120px;
+    padding: var(--pad);
+    margin: var(--pad);
+  }
+
+  :root[data-theme="dark"] {
+    --bg-color: darkslateblue;
+  }
+
+  .recipe {
+    --article-color: red;
+    background-color: var(--bg-color);
+    margin: 10px;
+    font-size: var(--text-dupa);
+    padding: 0.5rem;
+    border: 1px solid;
+    border-color: var(--article-color);
+  }
+
+  .description {
+    color: var(--article-color);
+  }
+
+  .btn-more {
+    font-size: var(--text-dupa);
+    color: var(--article-color);
+  }
+
+  .sponsored {
+    --article-color: blue;
+  }
+
+</style>
+
+
+<main>
+  <h1>Siemanko, witam w mojej kuchni</h1>
+
+  <article class="recipe">
+    <p class="description">
+      Czytaj super przepis na pangulara.
+    </p>
+    <button class="btn-more">
+      Czytaj wincyj
+    </button>
+  </article>
+
+  <article class="recipe sponsored">
+    <p class="description">
+      Czytaj super przepis na pangulara.
+    </p>
+    <button class="btn-more">
+      Czytaj wincyj
+    </button>
+  </article>
+  
+</main>
+</html>

@@ -1,0 +1,26 @@
+body {
+  margin: 100px;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  transition: 4000ms all;
+}
+
+.btn:hover {
+  background-color: #f0f;
+  /* transform: translateX(100px); */
+  transform: rotate(180deg);
+}
+
+.btn:focus {
+  transform: scale(3.1415);
+}
+
+.btn:active {
+  color: blue;
+}
+
+a:visited {
+  color: darkolivegreen;
+}

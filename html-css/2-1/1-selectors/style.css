@@ -1,0 +1,44 @@
+p {
+  font-size: x-large;
+  color: red;
+}
+
+h1 {
+  color: green;
+}
+
+.sponsored {
+  text-decoration: underline;
+}
+
+.epic {
+  background-color: pink;
+}
+
+.sponsored.epic {
+  background-color: dodgerblue;
+}
+
+#last-article {
+  text-transform: uppercase;
+}
+
+.smol {
+  text-transform: lowercase;
+}
+
+a {
+  font-size: 42px;
+}
+
+a[title] {
+  color: red;
+}
+
+a[title="Gugjel"] {
+  color: green;
+}
+
+.ewakuejszyn {
+  display: none;
+}
