@@ -1,0 +1,57 @@
+<style>
+  :root {
+    --item-size: 120px;
+  }
+
+  .full-size {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .box {
+    width: var(--item-size);
+    height: var(--item-size);
+    background-color: #f2c458;
+    border: 1px solid #600201;
+    /* margin: 10px; */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* align-content: center; */
+    /* flex-wrap: wrap; */
+  }
+
+  .item {
+    /* height: 50px;
+    min-height: 30px;
+    flex-basis: 20px; */
+    align-self: flex-start;
+  }
+
+  .item:nth-child(1) {
+    /* flex-grow: 0.2; */
+    flex-shrink: 0.1;
+    order: 1;
+  }
+
+  .item:nth-child(odd) {
+    /* align-self: center; */
+    justify-self: flex-end;
+  }
+</style>
+
+<main class="container full-size">
+  <article class="item box">1. Adam Małysz</article>
+  <article class="item box">2. Jane Ahonen</article>
+  <article class="item box">3</article>
+  <article class="item box">4</article>
+  <article class="item box">5</article>
+  <article class="item box">Dodaj zawodnika</article>
+</main>
+
+
