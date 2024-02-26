@@ -1,0 +1,29 @@
+<style>
+  body {
+    /* background-image: url("../../3-1/4-images/Lena.png"); */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .box {
+    background-color: dodgerblue;
+    width: 100px;
+    height: 100px;
+    /* property name | duration | easing function | delay */
+    transition:
+      background-color 900ms 4.2s,
+      width 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .box:hover {
+    background-color: crimson;
+    width: 300px;
+  }
+</style>
+
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>

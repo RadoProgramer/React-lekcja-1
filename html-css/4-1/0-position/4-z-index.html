@@ -1,0 +1,36 @@
+<style>
+  .box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: deeppink;
+    border: 1px solid hotpink;
+  }
+
+  .box:nth-child(1) {
+    z-index: 3;
+  }
+
+  .box:nth-child(2) {
+    background-color: aqua;
+    z-index: 2;
+  }
+
+  .box:nth-child(3) {
+    background-color: goldenrod;
+    z-index: 4;
+  }
+
+</style>
+
+<main>
+  <div class="box">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel tempora quo autem. Veritatis vero dolor ex quaerat quod, nulla dolores asperiores delectus sint rerum qui perspiciatis, nam aliquid beatae alias.
+    </p>
+  </div>
+
+  <div class="box">Siema</div>
+  <div class="box">Naura</div>
+
+</main>

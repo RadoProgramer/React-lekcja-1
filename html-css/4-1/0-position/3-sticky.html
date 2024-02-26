@@ -1,0 +1,49 @@
+<style>
+  main {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 100vh 0;
+    height: 100vh;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box {
+    position: static;
+
+    width: 100px;
+    height: 100px;
+    background-color: deeppink;
+    border: 1px solid hotpink;
+  }
+
+  .ad {
+    position: sticky;
+    /* top: 0; */
+    top: 25px;
+  }
+
+</style>
+
+<main>
+  <aside>
+    <div class="ad">Jakaś reklama</div>
+  </aside>
+
+  <div class="col">
+    <div class="box ad">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box ad">Ad</div>
+  </div>
+
+  <div class="col">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+</main>

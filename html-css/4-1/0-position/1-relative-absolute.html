@@ -1,0 +1,81 @@
+<style>
+  body {
+    padding: 100px 0;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+
+    position: relative;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: deeppink;
+    border: 1px solid hotpink;
+
+    /* left: 100px;
+    top: 100px; */
+  }
+
+  .box:nth-child(2) {
+    background-color: aqua;
+    position: relative;
+
+    left: 50px;
+    top: -50px;
+    /* bottom: 100px; */
+
+    /* absolute */
+    position: absolute;
+  }
+
+  .text {
+    background-color: dodgerblue;
+  }
+</style>
+
+<main>
+  <div class="box" title="hello there yall">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+  <span class="text">Jakiś tekst sobie tutaj jest 4</span>
+  <span class="text">Jakiś tekst sobie tutaj jest 5</span>
+  <span class="text">Jakiś tekst sobie tutaj jest 6</span>
+</main>
+
+
+<style>
+  .wrapper {
+    margin-top: 100px;
+    position: relative;
+    max-width: 200px;
+  }
+
+  .child:hover + .tooltip {
+    display: block;
+  }
+
+  .tooltip {
+    display: none;
+    width: 50px;
+    height: 50px;
+    background-color: aquamarine;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+  }
+
+  .tooltip.right {
+    left: 100%;
+    top: -50%;
+  }
+</style>
+
+<div class="wrapper">
+  <div class="child">I am a child. Gugu gaga</div>
+  <div class="tooltip right">Tooltip text</div>
+</div>

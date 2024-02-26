@@ -1,0 +1,47 @@
+<style>
+  main {
+    padding: 100vh 0;
+  }
+
+  .header-spacer {
+    --top-bar-height: 75px;
+    margin-bottom: var(--top-bar-height);
+  }
+
+  .top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--top-bar-height);
+    background-color: cornflowerblue;
+  }
+
+  .box {
+    position: static;
+
+    width: 100px;
+    height: 100px;
+    background-color: deeppink;
+    border: 1px solid hotpink;
+  }
+
+  .text {
+    background-color: dodgerblue;
+  }
+</style>
+
+
+<div class="header-spacer">
+  <header class="top-bar">Header</header>
+</div>
+
+<p>Jestem sobie jakimś tekstem.</p>
+
+<main>
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+  <span class="text">Jakiś tekst sobie tutaj jest 4</span>
+  <span class="text">Jakiś tekst sobie tutaj jest 5</span>
+  <span class="text">Jakiś tekst sobie tutaj jest 6</span>
+</main>
