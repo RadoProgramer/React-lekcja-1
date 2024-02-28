@@ -1,0 +1,84 @@
+<style>
+  @keyframes heartbeat {
+    0% {
+      transform: scale(0.5);
+    }
+
+    30% {
+      transform: scale(0.9);
+    }
+
+    90% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.9);
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .center {
+    position: absolute;
+    inset: 50%;
+    translate: -50% -50%;
+  }
+</style>
+<style>
+  .heart {
+    --size: 70px;
+    --color: tomato;
+    
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--color);
+    position: relative;
+    rotate: -45deg;
+
+    animation:
+      heartbeat 1000ms ease-in-out infinite,
+      fadein 1000ms ease-in-out;
+
+    /* animation-play-state: paused; */
+  }
+
+  .heart::before,
+  .heart::after {
+    --size-half: calc(0.5 * var(--size));
+    --size-half-negative: calc(-1 * var(--size-half));
+    content: "";
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--color);
+    position: absolute;
+  }
+
+  .heart:hover::before,
+  .heart:hover::after {
+    background-color: crimson;
+  }
+
+  .heart::before {
+    height: var(--size-half);
+    border-radius: var(--size-half) var(--size-half) 0 0;
+    top: var(--size-half-negative);
+  }
+
+  .heart::after {
+    width: var(--size-half);
+    border-radius: 0 var(--size-half) var(--size-half) 0;
+    right: var(--size-half-negative);
+  }
+
+</style>
+
+<div class="heart center"></div>

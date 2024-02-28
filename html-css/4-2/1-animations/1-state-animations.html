@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="./box.css">
+<style>
+  @keyframes heartbeat {
+    0% {
+      transform: scale(0.5);
+    }
+
+    30% {
+      transform: scale(0.9);
+    }
+
+    90% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.9);
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .heart.beating {
+    animation-play-state: running;
+  }
+
+  .heart {
+    rotate: -45deg;
+    animation:
+      heartbeat 1000ms ease-in-out infinite,
+      fadein 1000ms ease-in-out;
+
+    animation-play-state: paused;
+  }
+
+  .half {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+  }
+
+  .half.left {
+    border-radius: 50% 50% 0 0;
+  }
+
+  .half.right {
+    border-radius: 0 50% 50% 0;
+  }
+
+  .row {
+    display: flex;
+  }
+
+</style>
+
+<main class="container">
+  <button>Show some love ❤️</button>
+
+  <div class="heart">
+    <div class="half left"></div>
+    <div class="row">
+      <div class="box"></div>
+      <div class="half right"></div>
+    </div>
+  </div>
+  
+</main>
+
+<script>
+  const btn = document.querySelector("button");
+  const heart = document.querySelector("div.heart")
+  btn.addEventListener("click", () => {
+    heart.classList.toggle("beating");
+  });
+</script>

@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="./box.css">
+<style>
+  .translate {
+    background-color: aqua;
+    border: 1px solid black;
+
+    /* transform: translate(30px); */
+    /* transform: translateX(30px); */
+    /* transform: translateY(90px); */
+    /* transform: translateZ(240px); */
+    /* transform: translate3d(30px, 90px, 240px); */
+    
+    /* transform: translate3d(30px, 90px, 240px) rotate3d(1, 1, 1, 90deg); */
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: transform 400ms;
+  }
+
+  .translate:hover {
+    transform: translateY(-100px);
+    /* transform: scale(0.5); */
+  }
+
+</style>
+
+
+
+<main class="no-container">
+  <div class="box"></div>
+  <div class="box translate"></div>
+</main>

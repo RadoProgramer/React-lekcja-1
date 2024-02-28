@@ -1,0 +1,41 @@
+<style>
+  .box {
+    --pseudo-size: 70px;
+    margin: 100px;
+    width: 200px;
+    height: 200px;
+    background-color: dodgerblue;
+    position: relative;
+  }
+
+  .box::before {
+    /* content: ""; */
+    content: "Beforek";
+    width: var(--pseudo-size);
+    height: var(--pseudo-size);
+    background-color: red;
+
+    position: absolute;
+    top: calc(-1 * var(--pseudo-size));
+  }
+
+  .box::after {
+    /* content: ""; */
+    content: "Afterek";
+    width: var(--pseudo-size);
+    height: var(--pseudo-size);
+    background-color: green;
+
+    position: absolute;
+    right: calc(-1 * var(--pseudo-size));
+  }
+
+  .box:hover::before,
+  .box:hover::after {
+    color: white;
+  }
+</style>
+
+<!-- Mozemy stworzyc Serduszko za pomocą jednego elementu w ten sposób -->
+<!-- We could create a Heart out of it with one HTML element -->
+<div class="box"></div>

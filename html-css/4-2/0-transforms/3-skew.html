@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="./box.css">
+<style>
+  .skew {
+    background-color: aqua;
+    border: 1px solid black;
+
+    /* transform: skewX(30deg); */
+    /* transform: skewY(30deg); */
+    transform: skew(0, 0);
+    transition: transform 600ms;
+  }
+
+  .skew:hover {
+    /* transform: skew(72deg, 0); */
+    /* transform: skew(0, 72deg); */
+    transform: skew(72deg, 72deg);
+  }
+
+</style>
+
+
+
+<main class="container">
+  <div class="box"></div>
+  <div class="box skew"></div>
+</main>
