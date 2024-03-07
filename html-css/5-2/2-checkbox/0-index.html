@@ -1,0 +1,33 @@
+<form>
+  <label for="vegetarian">Vegetarian</label>
+  <input type="checkbox" name="vegetarian" value="vegetarian">
+<br>
+  <label for="glutenfree">Gluten Free</label>
+  <input type="checkbox" name="glutenfree" value="non-gluten" checked>
+<br>
+  <label for="lactoseintolerant">Lactose Intolerant</label>
+  <input type="checkbox" name="lactoseintolerant" value="non-lactose" disabled>
+
+  <input type="submit" value="Submit">
+</form>
+
+<!-- better label -->
+<form>
+  <label for="vegetarian">
+    Vegetarian
+    <input type="checkbox" name="vegetarian" value="vegetarian">
+  </label>
+  
+<br>
+  <label for="glutenfree">
+    Gluten Free
+    <input type="checkbox" name="glutenfree" value="non-gluten" id="glutenfree" checked>
+  </label>
+<br>
+  <label for="lactoseintolerant">
+    Lactose Intolerant
+    <input type="checkbox" name="lactoseintolerant" value="non-lactose" disabled>
+  </label>
+
+  <input type="submit" value="Submit">
+</form>

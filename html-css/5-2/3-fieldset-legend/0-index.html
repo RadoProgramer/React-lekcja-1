@@ -1,0 +1,55 @@
+<form>
+  <fieldset>
+    <legend>Order information</legend>
+    
+    <label>
+      Name:
+      <input type="text" name="name">
+    </label>
+
+    <label>
+      Address:
+      <input type="text" name="address">
+    </label>
+
+    <label>
+      Contact number:
+      <input type="tel" name="phone">
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Main meal</legend>
+
+    <select name="main-meal">
+      <option value="steak">Steak</option>
+      <option value="burger" selected>Burger</option>
+      <option value="pizza">Pizza</option>
+      <option value="salad">Salad</option>
+    </select>
+
+  </fieldset>
+
+
+
+  <fieldset>
+    <legend>Sides</legend>
+
+    <label>
+      <input type="checkbox" name="fries">
+      Fries
+    </label>
+
+    <label>
+      <input type="checkbox" name="nuggies">
+      Chicken Nuggets
+    </label>
+
+    <label>
+      <input type="checkbox" name="veggies">
+      Veggies
+    </label>
+  </fieldset>
+
+  <input type="submit" value="Order">
+</form>
