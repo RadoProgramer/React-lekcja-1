@@ -1,0 +1,39 @@
+<!-- not and -->
+<style>
+  p {
+    color: lime;
+  }
+
+  /* @media (min-height: 300px) and (max-width: 800px) {
+    p {
+      color: red;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+    }
+  } */
+
+  /* @media not (min-height: 250px) {
+    p {
+      color: blueviolet;
+    }
+  } */
+
+  @media (orientation: landscape) {
+    p {
+      color: red;
+    }
+  }
+
+  @media (orientation: portrait) {
+    p {
+      background-color: dodgerblue;
+    }
+  }
+</style>
+
+<body>
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime obcaecati, fugiat corrupti sunt non eos voluptas, ipsa, labore omnis dolores delectus sequi aspernatur. Cumque, magnam! Blanditiis sint facilis ipsum adipisci!
+  </p>
+</body>
