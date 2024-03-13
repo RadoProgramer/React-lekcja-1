@@ -1,0 +1,109 @@
+<style>
+  .top-bar {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu.desktop ul {
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+  }
+
+  @media (max-width: 500px) {
+    .menu.desktop {
+      display: none;
+    }
+  }
+</style>
+
+<style>
+  @media (min-width: 500px) {
+    .menu.mobile {
+      display: none;
+    }
+  }
+
+  /* mobile styles */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+  }
+
+  /* menu mobile */
+  .menu.mobile {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: pink;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .menu.mobile .row {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu.mobile.is-open {
+    display: block;
+  }
+</style>
+
+<header class="top-bar">
+  <h1>Logo</h1>
+
+  <div class="menu desktop">
+    <nav>
+      <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="menu mobile" id="menu-mobile">
+    <div class="row">
+      <button id="btn-close">X</button>
+    </div>
+    <nav>
+      <ul>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</header>
+
+<script>
+  const hamburger = document.querySelector("#hamburger");
+  const closeButton = document.querySelector("#btn-close")
+  const mobileMenu = document.querySelector("#menu-mobile");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.add("is-open");
+  });
+
+  closeButton.addEventListener("click", () => {
+    mobileMenu.classList.remove("is-open");
+  });
+</script>

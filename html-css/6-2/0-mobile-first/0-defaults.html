@@ -1,0 +1,60 @@
+<style>
+  /* Default .box styles */
+  .box {
+    background-color: aquamarine;
+    border: 2px solid black;
+  }
+
+  @media (min-width: 768px) {
+    .box {
+      border: none; /* reset defaults */
+      box-shadow: 2px 2px 4px 2px black;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .box {
+      border: none; /* reset defaults */
+      box-shadow: none;  /* reset previous query */
+    }
+  }
+</style>
+
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    max-width: 1000px;
+  }
+
+  .card {
+    width: 300px;
+    height: 200px;
+    background-color: darkorchid;
+  }
+</style>
+
+<main>
+
+  <div class="box">
+    Box
+  </div>
+
+  <br>
+
+  <section class="container">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </section>
+
+</main>

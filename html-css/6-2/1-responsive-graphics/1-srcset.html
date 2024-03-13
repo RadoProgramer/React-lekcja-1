@@ -1,0 +1,12 @@
+<!-- <img
+  srcset="
+    https://picsum.photos/id/237/320/240 1x,
+    https://picsum.photos/id/237/640/480 2x,
+    https://picsum.photos/id/237/960/720 3x"
+/> -->
+
+<picture>
+  <source media="(max-width: 700px)" srcset="https://picsum.photos/id/237/640/480?q=1">
+  <source media="(min-width: 1000px)" srcset="https://picsum.photos/id/237/960/720?q=2">
+  <img src="https://picsum.photos/id/237/320/240" alt="Dog">
+</picture>

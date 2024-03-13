@@ -1,0 +1,38 @@
+<style>
+  :root {
+    --box-width-mobile: 300px;
+    --box-width-tablet: 700px;
+    --box-width-desktop: 1000px;
+    
+    --box-width: var(--box-width-mobile);
+  }
+
+  .box {
+    background-color: lightblue;
+    width: var(--box-width); /* --box-width: 300px; */
+  }
+</style>
+
+<style>
+  @media (width <= 768px) {
+    .box {
+      --box-width: var(--box-width-mobile);
+      border: 1px solid black;
+    }
+  }
+
+  @media (768px <= width <= 1023px) {
+    .box {
+      --box-width: var(--box-width-tablet);
+      box-shadow: 2px 2px 4px 2px black;
+    }
+  }
+</style>
+
+<main>
+
+  <div class="box">
+    Box
+  </div>
+
+</main>

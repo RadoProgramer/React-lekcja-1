@@ -1,0 +1,73 @@
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12rem;
+    padding: 12rem 0;
+  }
+
+  .column {
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0;
+  }
+</style>
+
+<div>
+  <button class="down">Scale down</button>
+  <button class="reload">Reload Images</button>
+  <button class="up">Scale up</button>
+  <label>
+    <input type="checkbox" class="col">
+    Column
+  </label>
+</div>
+<main class="container">
+  
+  <img src="https://picsum.photos/id/237/320/240" alt="x1" width="320" height="240">
+
+  <img src="https://picsum.photos/id/237/640/480" alt="x2" width="320" height="240">
+
+  <img src="https://picsum.photos/id/237/960/720" alt="x3" width="320" height="240">
+
+</main>
+
+<script>
+  const id = 237;
+  const sizes = [{ w: 320, h: 240 }, { w: 640, h: 480 }, { w: 960, h: 720 }];
+
+  const url = (id, width, height) => `https://picsum.photos/id/${id}/${width}/${height}`;
+
+  const randomId = () => Math.ceil(Math.random() * 500);
+
+  const setImgSrc = (img, id, width, height) => {
+    img.src = url(id, width, height);
+  };
+
+  const imgs = document.querySelectorAll("img");
+
+  const reloadImages = () => {
+    const id = randomId();
+    imgs.forEach((img, i) => setImgSrc(img, id, sizes[i].w, sizes[i].h));
+  };
+
+  document.querySelector("button.reload").addEventListener("click", reloadImages);
+
+  const scaleImg = (img, scale = 0.1) => {
+    img.style.scale = Number(img.style.scale || 1) + scale;
+  };
+
+  document.querySelector("button.down").addEventListener("click", () => {
+    imgs.forEach(img => scaleImg(img, -0.1));
+  });
+
+  document.querySelector("button.up").addEventListener("click", () => {
+    imgs.forEach(img => scaleImg(img, 0.1));
+  });
+
+  const container = document.querySelector("main.container");
+  document.querySelector("input.col").addEventListener("change", (event) => {
+    container.classList.toggle("column");
+  });
+</script>

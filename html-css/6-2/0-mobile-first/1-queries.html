@@ -1,0 +1,39 @@
+<style>
+  .box {
+    background-color: burlywood;
+  }
+
+  /* @media (max-width: 767px) {
+    .box {
+      border: 2px solid black;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .box {
+      box-shadow: 2px 2px 4px 2px black;
+    }
+  } */
+</style>
+
+<style>
+  @media (width <= 767px) {
+    .box {
+      border: 1px solid black;
+    }
+  }
+
+  @media (768px <= width <= 1023px) {
+    .box {
+      box-shadow: 2px 2px 4px 2px black;
+    }
+  }
+</style>
+
+<main>
+
+  <div class="box">
+    Box
+  </div>
+
+</main>
