@@ -1,0 +1,41 @@
+<title>Comparison operators</title>
+
+<script>
+
+    const name = "Adam";
+    const adminName = "Adam";
+
+
+    const isEqual =     name == adminName; // true
+    const isNotEqual =  name != adminName; // false
+
+
+    const isEqualAndSameType =              name === adminName; // true
+    const isNotEqualWithTypeConsideration = name !== adminName; // false
+
+
+    const x = 42;
+    const y = "42";
+
+    const sameValue =           x == y; // true
+    const sameValueAndType =    x === y; // false
+
+</script>
+
+<script>
+
+    const a = 21;
+    const b = 44;
+
+    const isLargerThan =    a > b; // false
+    const isLessThan =      a < b; // true
+
+    const isLargerThanOrEqual = a >= b; // false
+    const isLessThanOrEqual =   a <= b; // true
+
+
+    const weight = 70;
+
+    const isBetweenAllowedLiftWeight = weight >= 30 && weight <= 100;
+
+</script>
