@@ -1,0 +1,102 @@
+<title>Ternary Operator</title>
+
+<script>
+
+// const score = 51;
+
+// let pass;
+    
+// if (score >= 50) {
+//     pass = true;
+// } else {
+//     pass = false;
+// }
+
+// // pass = false;
+
+</script>
+
+<script>
+
+// const score = 51;
+
+// const pass = score >= 50;
+
+</script>
+
+<script>
+
+// const isRed = true;
+
+// let color = "some default color";
+
+// if (isRed) {
+//     color = "red";
+// } // for example: else set default color
+
+// // color = "LOL NOPE! Some other colour as it is not const!";
+</script>
+
+<script>
+
+const isBlue = true;
+// const isBlue = false;
+
+// Ternary operator - Operator trójkowy
+const myColor = (isBlue === true) ? "I am blue" : "I am some default color";
+
+const ourColor = isBlue
+    ? "Blueeee"
+    : "foo bar baz and other gizmos :D";
+
+// console.log({ myColor, ourColor });
+
+</script>
+
+<script>
+
+    const age = 15;
+
+    // console.log(age >= 18 ? "I can vote" : "I can't vote");
+
+    // (age >= 18)
+    //     ? console.log("I can vote")
+    //     : console.log("I can't vote");
+
+</script>
+
+<script>
+
+    const a = 42;
+    const b = 57;
+
+    // Implement with ternary based on a & b values.
+    // const min = -Infinity;
+    const min = a <= b ? a : b;
+
+    function getMin(x, y) {
+        return x <= y ? x : y;
+    }
+
+    // console.log(getMin(a, b));
+    // console.log(Math.min(a, b));
+
+    // console.log(getMin(b, a));
+    // console.log(Math.min(b, a));
+
+    // const max = Infinity;
+    const max = a >= b ? a : b;
+
+    function getMax(x, y) {
+        return x >= y ? x : y;
+    }
+
+    // console.log(getMax(a, b));
+    // console.log(Math.max(a, b));
+
+    // console.log(getMax(b, a));
+    // console.log(Math.max(b, a));
+
+    console.log({ min, max });
+
+</script>

@@ -1,0 +1,149 @@
+<title>Switch statement</title>
+
+<script>
+
+    function getRating(score) {
+        if (score === 5) {
+            return "Excelent!";
+        } else if (score === 4) {
+            return "Well done!";
+        } else if (score === 3) {
+            return "Passed.";
+        } else {
+            return "Failed...";
+        }
+    }
+
+    const score = 4;
+    // console.log(`Rating: ${getRating(score)}`);
+
+</script>
+
+<script>
+
+    function betterGetRating(score) {
+        
+        let rating = "";
+
+        switch(score) {
+            case 5:
+                rating = "Excelent!";
+                break;
+            case 4:
+                rating = "Well done!";
+                break;
+            case 3:
+                rating = "Passed.";
+                break;
+            default:
+                rating = "Failed...";
+                break;
+        }
+
+        return rating;
+    }
+
+    const ourScore = 4;
+    // console.log(`Rating: ${betterGetRating(ourScore)}`);
+
+</script>
+
+<script>
+
+    // const name = "Admin";
+
+    // switch (name) {
+    //     case "Adam":
+    //         console.log("Hello Adam!");
+    //         break;
+    //     case "Beth":
+    //         console.log("Hello Beth!");
+    //         break;
+    //     case "Admin":
+    //         console.log("WELCOME OUR DEAR ADMINISTRATOR!");
+    // }
+
+</script>
+
+<script>
+    // fall through and no defaults
+
+    // const name = "Adam";
+
+    // switch(name) {
+    //     case "Adam":
+    //         console.log("Hi Adam!");
+    //     case "Beth":
+    //         console.log("Hi Beth!");
+    //         break;
+    //     case "Cecil":
+    //         console.log("Hi Cecil!");
+    // }
+
+    // const pressedButton = "W";
+    // const pressedButton = "w";
+    // const pressedButton = "SPACE";
+
+    // switch(pressedButton) {
+    //     case "W":
+    //     case "w":
+    //     case "SPACE":
+    //         console.log("UP");
+    //         break;
+    //     case "S":
+    //         console.log("DOWN");
+    //         break;
+    //     case "A":
+    //         console.log("LEFT");
+    //         break;
+    //     case "D":
+    //         console.log("RIGHT");
+    //         break;
+    //     default:
+    //         console.log("Wrong button");
+    // }
+
+
+</script>
+
+<script>
+    // {} and return statements
+
+    // function getRate(score) {
+    //     switch(score) {
+    //         case 5: return "Excelent!";
+    //         case 4: return "Well done!";
+    //         case 3: return "Passed.";
+    //         default: return "Failed...";
+    //     }
+    // }
+
+    // console.log("Rate: " + getRate(3));
+
+    const pressedButton = "D";
+
+    switch(pressedButton) {
+        case "W":
+        case "w":
+        case "SPACE": {
+            console.log("UP");
+            break;
+        }
+        case "S": {
+            console.log("DOWN");
+            break;
+        }
+        case "A": {
+            console.log("LEFT");
+            break;
+        }
+        case "D": {
+            console.log("RIGHT");
+            break;
+        }
+        default: {
+            console.log("Wrong button");
+        }
+    }
+
+</script>
