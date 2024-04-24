@@ -1,0 +1,85 @@
+<title>For Loop</title>
+
+<script>
+
+    // let i = 10;
+
+    // while (i < 20) {
+    //     i++;
+    //     console.log("Sub added");
+    // }
+
+    
+
+    // for (let i = 10; i<20; i=i+2) {
+    for (let i = 10; i<20; i++) {
+        // console.log(i);
+    }
+
+</script>
+
+<script>
+
+    const text = "Hello There!";
+
+    for (let i = 0; i < text.length; i++) {
+        // console.log( i, text[i] );
+    }
+
+</script>
+
+<script>
+
+    // function findIndexOfChar(text, char) {
+    //     let index = -1; // null
+
+    //     for (let i=0; i<text.length; i++) {
+    //         const currentLetter = text[i];
+
+    //         if (currentLetter.toLowerCase() === char.toLowerCase()) {
+    //             index = i;
+    //             // console.log(index);
+
+    //             break;
+    //         }   
+    //     }
+
+    //     return index;
+    // }
+
+    function findIndexOfChar(text, char) {
+        for (let i=0; i<text.length; i++) {
+            const currentLetter = text[i];
+
+            if (currentLetter.toLowerCase() === char.toLowerCase()) {
+                return i;
+            }   
+        }
+
+        return -1;
+    }
+
+    // console.log( findIndexOfChar("Hello There!", "e") );
+    // console.log( findIndexOfChar("Hello There!", "z") );
+
+</script>
+
+<script>
+
+    // for(;;) {
+    //     console.log("Infinite loop " + Date.now());
+    // }
+
+</script>
+
+<script>
+
+    function recursion(x) {
+        console.log(x);
+        if (x > 0) recursion(x - 1);
+        // recursion(x - 1);
+    }
+
+    recursion(10);
+
+</script>

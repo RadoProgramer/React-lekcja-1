@@ -1,0 +1,109 @@
+<title>String - properties & methods</title>
+
+<script>
+
+    const msg = "Hello";
+    // const msg = 'Hello';
+    // const msg = `Hello`;
+
+    // console.log(`Message value: "${msg}"`);
+    // console.log(`Message length: ${msg.length}`);
+    // console.log(`Message first character: ${msg[0]}`);
+    // console.log(`Message last character: ${msg[msg.length - 1]}`);
+
+</script>
+
+<script>
+
+    function isHello(text) {
+        return text.toLowerCase() === "hello";
+        // return text.toUpperCase() === "HELLO";
+        // return text.toUpperCase() === "hello".toUpperCase();
+    }
+
+    const x = "HELLo";
+
+    // if (isHello(x)) {
+    //     console.log("Messages are matching!");
+    // } else {
+    //     console.log("Messages are not matching :c");
+    // }
+
+    // const output = isHello(x)
+    //     ? "Messages are matching!"
+    //     : "Messages are not matching :c";
+
+    // console.log(output);
+
+</script>
+
+<script>
+
+    function getLettersOnly(text, from, to) {
+        // let result = text.slice(from, to); //
+        // result = result.trim(); // comment out
+
+        // const fragment = text.slice(from, to);
+        // const result = fragment.trim();
+
+        // return result;
+
+        return text
+            .slice(from, to)
+            .trim();
+    }
+
+    // console.log( getLettersOnly("Hello World", 5, 11) );
+
+    const lettersOnly = getLettersOnly("Hello World", 5, 11);
+    // console.log(`'${lettersOnly}'`);
+
+</script>
+
+<script>
+
+    function isValidEmail(email) {
+        // return email.includes("@");
+        // return email.includes("@") && email.includes(".");
+        // return email.includes("@")
+        //     && email.includes(".")
+        //     && !email.startsWith("@");
+        return email.includes("@")
+            && email.includes(".")
+            && !email.startsWith("@")
+            && !email.endsWith("@");
+    }
+
+    function checkEmail(email) {
+        console.log(
+        `Email "${email}" is ${isValidEmail(email) ? "valid" : "invalid"}`
+        );
+    }
+
+    // checkEmail("someone@test.com");
+    // checkEmail("some.one@testcom");
+    // checkEmail("someone@testcom");
+    // checkEmail("someonetest.com");
+    // checkEmail("@.");
+    // checkEmail(".@");
+
+</script>
+
+<script>
+
+    function isEmailFromAllowedDomain(email, domain) {
+        return email.endsWith(domain);
+    }
+
+    function checkEmailAgain(email, domain) {
+        console.log(`Email "${email}" is from ${isEmailFromAllowedDomain(email, domain) ? "valid" : "invalid"} domain`);
+    }
+
+
+    checkEmailAgain("some.one@test.com", ".com");
+    checkEmailAgain("some.one@test.com", ".pl");
+    checkEmailAgain("some.one@test.com", ".eu");
+    checkEmailAgain("some.one@test.com", ".de");
+    checkEmailAgain("some.one@test.se", ".se");
+
+</script>
