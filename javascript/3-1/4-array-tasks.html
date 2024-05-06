@@ -1,0 +1,94 @@
+<title>Array tasks</title>
+
+<script id="Reverse string using array methods OR for loop with index">
+
+    const text = "Welcome!";
+
+    function reverseText(str) {
+        // const letters = str.split("");
+        // // console.log(letters);
+
+        // const reversedArray = letters.toReversed();
+        // // console.log(reversedArray);
+
+        // const reversedText = reversedArray.join("");
+        // console.log(reversedText);
+
+        // return reversedText;
+
+        return str
+            .split("")
+            .toReversed()
+            .join("");
+    }
+
+    function reverseTextWithLoop(str) {
+        let reversed = "";
+
+        // for (let i=str.length-1; i>=0; i--) {
+        //     const letter = str[i];
+        //     reversed = reversed + letter;
+        // }
+
+        for (const letter of str.split("").toReversed()) {
+            reversed = reversed + letter;
+        }
+
+        return reversed;
+    }
+
+    // const reverseString = (str) => str.split("").toReversed().join("");
+
+    // // Unit tests
+    // console.log("Is matching: ", reverseText(text) === "!emocleW");
+    // console.log("Is matching: ", reverseText("abc") === "cba");
+    // console.log("Is matching: ", reverseText("321123") === "321123");
+    
+    // // Unit tests
+    // console.log("Is matching: ", reverseTextWithLoop(text) === "!emocleW");
+    // console.log("Is matching: ", reverseTextWithLoop("abc") === "cba");
+    // console.log("Is matching: ", reverseTextWithLoop("321123") === "321123");
+
+</script>
+
+<script id="Function - Find min and max number in array of numbers">
+    
+    const numbers = [2, 17, 94, 1, 23, 37];
+
+    function getMin(nums) {
+
+        // let minimum = nums[0];
+        let minimum = Infinity;
+
+        for (const num of nums) {
+            if (num < minimum) {
+                minimum = num;
+            }
+        }
+
+        return minimum;
+    }
+
+    function getMax(nums) {
+        // let maximum = nums[0];
+        let maximum = -Infinity;
+
+        for (const num of nums) {
+            if (num > maximum) {
+                maximum = num;
+            }
+        }
+
+        return maximum;
+    }
+
+    // Unit tests
+    console.log("Is matching: ", getMin([]) === Infinity);
+    console.log("Is matching: ", getMin(numbers) === 1);
+    console.log("Is matching: ", getMin(numbers) === Math.min(...numbers));
+
+    console.log("Is matching: ", getMax([]) === -Infinity);
+    console.log("Is matching: ", getMax(numbers) === 94);
+    console.log("Is matching: ", getMax(numbers) === Math.max(...numbers));
+
+</script>

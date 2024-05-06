@@ -1,0 +1,159 @@
+<title>Arrays</title>
+
+<script data-label="Multiple values of the same group">
+  
+    // const fruit1 = "mango";
+    // const fruit2 = "strawberry";
+    // const fruit3 = "banana";
+
+    // // console.log(fruit1);
+    // // console.log(fruit2);
+    // // console.log(fruit3);
+
+    // // Array (grouping values)
+    // const fruits = [fruit1, fruit2, fruit3];
+
+    // console.log(fruits);
+
+</script>
+
+<script data-label="Grouping values">
+
+    // // const fruit1 = "mango";
+    // // const fruit2 = "strawberry";
+    // // const fruit3 = "banana";
+
+    // // Array (grouping values)
+    // // const fruits = [fruit1, fruit2, fruit3];
+    // const fruits = ["mango", "strawberry", "banana", "kiwi"];
+
+    // console.log(fruits);
+
+</script>
+
+<script data-label="Mixed values">
+
+    // const foo_bar_baz = ["foo", 0, true, null, undefined, [], [1,2,3, []]];
+
+    // console.log(foo_bar_baz);
+
+</script>
+
+<script data-label="Indexing elements">
+
+    // const students = [
+    //     "Adam",     // First element    - index 0
+    //     "Beth",     // Second element   - index 1
+    //     "Cecil",    // Third element    - index 2
+    //     "Dorthy",   // Fourth element   - index 3
+    //     // trailing comma,
+    // ];
+
+    // console.log("First element: "   + students[0]);
+    // console.log("Second element: "  + students[1]);
+    // console.log("Third element: "   + students[2]);
+    // console.log("Fourth element: "  + students[3]);
+
+    // // Reversed display
+    // console.log("Fourth element: "  + students[3]);
+    // console.log("Third element: "   + students[2]);
+    // console.log("Second element: "  + students[1]);
+    // console.log("First element: "   + students[0]);
+    
+    // console.log(students[42]); // trying to access an index outside of the array range
+
+</script>
+
+<script data-label="Indexing task">
+    
+    // const nums = [1,2,3,4];
+
+    // console.log( nums[4] ); // output?
+
+</script>
+
+<script data-label="Reassigning array elements">
+    
+    // const flowers = ["rose", "dandelion", "tulip"];
+    // console.log(flowers);
+
+    // flowers[2] = "orchid";
+    // // flowers = ["rose", "dandelion", "orchid"]; // error
+    // console.log(flowers);
+
+    // flowers[3] = "poppy";
+    // console.log(flowers);
+
+</script>
+
+<script data-label="Inserting new elements - bad index, empty value">
+
+    // const flowers = ["rose", "dandelion", "orchid"];
+    // console.log(flowers);
+
+    // flowers[4] = "poppy";
+    // // flowers[42] = "poppy";
+    // console.log(flowers);
+
+</script>
+
+<script data-label="Array.length property">
+
+    // const flowers = ["rose", "dandelion", "orchid"];
+    // console.log(flowers, flowers.length);
+
+    // flowers[flowers.length] = "poppy";
+    // console.log(flowers, flowers.length);
+
+    // flowers[flowers.length] = "lilly";
+    // console.log(flowers, flowers.length);
+
+    // flowers[flowers.length] = "daisy";
+    // console.log(flowers, flowers.length);
+
+</script>
+
+<script data-label="Adding elements">
+
+    // const flowers = ["rose", "dandelion", "orchid"];
+    // console.log(flowers);
+
+    // // flowers[42] = "daisy";
+
+    // flowers.push("poppy");
+    // // flowers.push("poppy", "lilly");
+    // console.log(flowers);
+
+</script>
+
+<script data-label="Looping over array elements">
+
+    // const fruits = ["🍎", "🍇", "🍑", "🍌", "🍋"];
+
+    // for (let i = 0; i < fruits.length; i++) {
+    //     console.log( fruits[i] );
+    //     // i = 10;
+    // }
+
+</script>
+
+<script data-label="Displaing array element based on user input index">
+
+    function runPrizeLottery(prizes) {
+        const userInput = prompt("LOTTERY! Please provide a number of your prize!");
+        const index = parseInt(userInput, 10);
+
+        const outOfPrizeRange = (index < 0) || (index >= prizes.length);
+
+        if (outOfPrizeRange) return "Nothing";
+        return prizes[index];
+    }
+
+
+    // const rewards = ["Golden Ticket", "Baloon", "Kebab"];
+    // console.log("First lottery result: " + runPrizeLottery(rewards));
+
+    const plushies = ["Teddy Bear", "Plushy Rabbit", "Capybara", "Pedro the Racoon"];
+    console.log("Second lottery result: " + runPrizeLottery(plushies));
+
+</script>
