@@ -1,0 +1,64 @@
+<title>Default function arguments</title>
+
+<script>
+
+    function power(a, x) {
+        return Math.pow(a, x);
+    }
+
+    // console.log( power(5, 2) );
+    // console.log( power(5) );
+
+    // function powerDefault(a = 2, x, y = 5) {
+    function powerDefault(a, x = 2) {
+        return Math.pow(a, x);
+    }
+
+    // // console.log( powerDefault(, 2, ) );
+    // console.log( powerDefault(5, 2) );
+    // console.log( powerDefault(5) );
+    // console.log( powerDefault(5, 3) );
+
+</script>
+
+<script>
+
+    // function sum(a, b) {
+    //     console.log({ a, b });
+    //     if (a === undefined) a = 0;
+    //     if (b === undefined) b = 0;
+    //     return a + b;
+    // }
+
+    // function nullable(x) {
+    //     return x ?? 0;
+    // }
+
+    // function sum(a, b) {
+    //     // return (a ?? 0) + (b ?? 0);
+    //     return nullable(a) + nullable(b);
+    // }
+
+    // function sum() {
+    //     let suma = 0;
+        
+    //     for (const arg of arguments) {
+    //         if (Number.isInteger(arg)) suma += arg;
+    //     }
+        
+    //     return suma;
+    // }
+
+    const sum = function() {
+        return Array.from(arguments)
+            .filter(arg => Number.isInteger(arg))
+            .reduce((acc, n) => acc + n, 0);
+    };
+
+    console.log( sum(2, 3) );
+    console.log( sum(2) );
+    console.log( sum() );
+    
+    console.log( sum(2, 3, undefined, 5) );
+
+</script>

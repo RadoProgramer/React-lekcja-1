@@ -1,0 +1,19 @@
+<title>Call Stack</title>
+
+<script>
+
+    function callMeMaybe(x) {
+        if (x > 0) {
+            console.log("Calling " + x);
+            return callMeMaybe(--x);
+        } else {
+            console.log("Out of credit");
+        }
+    }
+
+    callMeMaybe(10);
+    callMeMaybe(1_000_000);
+    // callMeMaybe(9_999_999);
+    // callMeMaybe(9_999_999_999);
+
+</script>

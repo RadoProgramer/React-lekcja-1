@@ -1,0 +1,118 @@
+<title>Scope and closure</title>
+
+<script>
+
+    const MSG = "Global broadcast";
+    const numbers = [1, 2 , 3];
+
+    function broadcast() {
+        // console.log(MSG);
+
+        function x() {
+            function y() {
+                function z() {
+                    console.log("Z: " + MSG);
+                }
+                z();
+            }
+            y();
+        }
+
+        x();
+    }
+
+    // broadcast();
+
+</script>
+
+<script>
+
+    // console.log(MSG, numbers);
+    // broadcast();
+
+</script>
+
+<script>
+    // Global scope
+    const DEFAULT_NUMBER = 42;
+    const x = 1;
+
+    {
+        const q = 123; // local scope
+    }
+
+    // console.log({ q }); // cannot reach local scope of q
+
+
+
+    function power(x, pow = 2) { // Local scope
+        if (x === 0) { // Local scope
+            const y = 1337;
+            console.log({ y }); // local "if" scope
+
+            x = DEFAULT_NUMBER;
+        }
+
+        // console.log({ y }); // out of "function" scope
+        let result = 1;
+        for (let i=0; i<pow; i++) { // Local scope
+            const z = 1337;
+            console.log({ z }); // local "for loop" scope
+
+            result *= x;
+        }
+
+        // console.log({ z }); // out of "function" scope
+
+        return result;
+    }
+
+    // console.log({ x });
+
+    // // console.log( power(2, 3) );
+    // console.log( power(0, 3) );
+
+    // console.log({ x });
+
+</script>
+
+<script>
+
+    const lewy = "Robert Lewandowski";
+
+
+    function gossip(message) {
+        const lewy = "Maurycy Lewandowski";
+
+        console.log(message);
+        console.log(`${lewy}?`);
+    }
+
+    // gossip("Lewy strzelił gola!");
+    // console.log(`Nie, ${lewy}!`);
+
+
+</script>
+
+<script>
+
+    function createIterator(initialValue = 0) {
+        let iterator = initialValue; // closure
+
+        return function() {
+            iterator++;
+            console.log(iterator);
+        }
+    }
+
+    const i = createIterator(42);
+
+    i();
+    i();
+    i();
+
+    // console.log({ iterator });
+
+    i();
+
+</script>
