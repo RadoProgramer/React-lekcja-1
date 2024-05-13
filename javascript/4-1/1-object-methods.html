@@ -1,0 +1,99 @@
+<title>Object methods</title>
+
+<script>
+
+    // const player = {
+    //     username: "Michael",
+    //     level: 100,
+    //     friends: ["Arthur", "Tommy"],
+    //     status: "Hello there",
+    //     42: "everything",
+    // };
+
+
+    // const listOfPlayerProperties = Object.keys( player );
+    // console.log(listOfPlayerProperties);
+    // console.log(player[42] , player["42"], player[42] === player["42"]);
+
+
+    // const x = {
+    //     y: function(z){
+    //         console.log(z)
+    //     }
+    // }
+
+    // x.y("hi");
+
+</script>
+
+<script>
+
+    // const player = {
+    //     username: "Michael",
+    //     level: 100,
+    //     friends: ["Arthur", "Tommy"],
+    //     status: "Hello there",
+    //     42: "everything",
+    // };
+
+    // const listOfPlayerValues = Object.values( player );
+    // console.log( listOfPlayerValues );
+
+</script>
+
+<script>
+
+    // const player = {
+    //     username: "Michael",
+    //     level: 100,
+    //     friends: ["Arthur", "Tommy"],
+    //     status: "Hello there",
+    //     42: "everything",
+    //     something: {
+    //         very: "interesting"
+    //     }
+    // };
+
+    // const bothKeysAndValuesOfPlayer = Object.entries( player );
+    // console.log(bothKeysAndValuesOfPlayer);
+
+
+
+    // const possiblyTommy = Object.entries(player)[3][1][1]; // player.friends[1];
+    // console.log(possiblyTommy);
+
+    // const friendsIfExisting = bothKeysAndValuesOfPlayer.find(function(entry) {
+    //     return entry[0] === "friends";
+    // })[1];
+
+    // console.log(friendsIfExisting[1]);
+
+</script>
+
+<script>
+
+    const player = {
+        username: "Michael",
+        level: 100,
+        friends: ["Arthur", "Tommy"],
+        status: "Hello there",
+        42: "everything",
+        something: {
+            very: "interesting"
+        },
+        undef: undefined
+    };
+
+    // const key = "username";
+    // const key = "non_existing_property";
+    const key = "undef";
+
+    console.log(`${key}: `, player[key]);
+
+    if (player.hasOwnProperty(key)) {
+        console.log(`Object 'player' has a key of name '${key}' with a value of '${player[key]}'`);
+    } else {
+        console.log(`Object 'player' has no key of name '${key}'`);
+    }
+
+</script>

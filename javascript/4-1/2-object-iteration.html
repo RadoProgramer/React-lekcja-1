@@ -1,0 +1,159 @@
+<title>Object iteration</title>
+
+<script id="For in Object">
+    
+    // const book = {
+    //     title: "Dune",
+    //     author: "Frank Herbert",
+    //     description: "I like sand",
+    //     releaseDate: new Date(1965),
+    //     rating: 4,
+    //     numberOfPages: 1337,
+    //     category: "SciFi",
+    //     comments: [
+    //         { username: "Adam", comment: "Cool book bro.", commentedAt: new Date(2000) },
+    //         { username: "Beth", comment: "Movie was so much better", commentedAt: new Date(2024) },
+    //         { username: "Cecil", comment: "I cannot wait for the movies!", commentedAt: new Date(2012) },
+    //     ]
+    // };
+
+    // for (const key in book) {
+    //     console.log( key );
+    // }
+    
+</script>
+
+<script>
+
+    // const book = {
+    //     title: "Dune",
+    //     author: "Frank Herbert",
+    //     description: "I like sand",
+    //     releaseDate: new Date(1965),
+    //     rating: 4,
+    //     numberOfPages: 1337,
+    //     category: "SciFi",
+    //     comments: [
+    //         { username: "Adam", comment: "Cool book bro.", commentedAt: new Date(2000) },
+    //         { username: "Beth", comment: "Movie was so much better", commentedAt: new Date(2024) },
+    //         { username: "Cecil", comment: "I cannot wait for the movies!", commentedAt: new Date(2012) },
+    //     ]
+    // };
+
+    // for (const x of Object.keys(book)) {
+    //     console.log(x);
+    // }
+
+    // for (const x of Object.values(book)) {
+    //     console.log(x);
+    // }
+
+</script>
+
+<script>
+
+    const library = [
+        {
+            title: "Dune",
+            author: "Frank Herbert",
+            description: "I like sand",
+            releaseDate: new Date(1965),
+            rating: 4,
+            numberOfPages: 1337,
+            category: "SciFi",
+            comments: [
+                { username: "Adam", comment: "Cool book bro.", commentedAt: new Date(2000, 0) },
+                { username: "Beth", comment: "Movie was so much better", commentedAt: new Date(2024, 0) },
+                { username: "Cecil", comment: "I cannot wait for the movies!", commentedAt: new Date(2012, 0) },
+            ]
+        },
+        {
+            title: "Lord of the Rings: Two Towers",
+            author: "Tolkien",
+            description: "Taking Hobbits to Isengard",
+            releaseDate: new Date(1970),
+            rating: 4,
+            numberOfPages: 2456,
+            category: "Fantasy",
+            comments: [
+                { username: "Adam", comment: "Cool book bro.", commentedAt: new Date(2000, 0) },
+                { username: "Beth", comment: "Movie was so much better", commentedAt: new Date(2024, 0) },
+                { username: "Cecil", comment: "I cannot wait for the movies!", commentedAt: new Date(2012, 0) },
+            ]
+        },
+        {
+            title: "Harry Potter",
+            author: "Rowling",
+            description: "Yerr a wizzard Harry",
+            releaseDate: new Date(1995),
+            rating: 3,
+            numberOfPages: 500,
+            category: "Fantasy",
+            comments: [
+                { username: "Adam", comment: "Cool book bro.", commentedAt: new Date(2000, 0) },
+                { username: "Beth", comment: "Movie was so much better", commentedAt: new Date(2024, 0) },
+                { username: "Cecil", comment: "I cannot wait for the movies!", commentedAt: new Date(2012, 0) },
+            ]
+        }, 
+    ];
+
+    const commentsDate = [];
+
+    for (const book of library) {
+        for (const comment of book.comments) {
+            commentsDate.push(comment.commentedAt);
+        }
+    }
+
+    const commentsSortedByYear = commentsDate.toSorted(function (a, b) {
+        return a.getFullYear() - b.getFullYear();
+    });
+
+    // console.log(commentsSortedByYear);
+
+</script>
+
+<script>
+
+    // const playerOne = {
+    //     username: "One",
+    //     level: 12,
+    // };
+
+    // function levelUp(player) {
+    //     player.level++;
+    // }
+
+    // console.log(playerOne);
+
+    // levelUp(playerOne);
+
+    // console.log(playerOne);
+
+</script>
+
+<script>
+
+    // function greetPlayer(player) {
+    //     console.log(`Elo ${player.username}`);
+    // }
+
+    function greetPlayer({ username }) {
+        console.log(`Elo ${username}`);
+    }
+
+    const playerOne = {
+        username: "Eniu",
+        level: 12,
+    };
+
+    const playerTwo = {
+        username: "Stefan",
+        level: 72,
+        rank: "Not a master",
+    };
+
+    greetPlayer(playerOne);
+    greetPlayer(playerTwo);
+
+</script>
