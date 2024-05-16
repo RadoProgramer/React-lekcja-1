@@ -1,0 +1,322 @@
+<title>Object methods</title>
+
+<script id="Loose coupling of components - objects & methods">
+
+    // const books = [
+    //     { id: 1, title: "Dune", author: "Frank Herbert" },
+    //     { id: 2, title: "The Lord of the Rings", author: "J.R.R. Tolkien" },
+    //     { id: 3, title: "Harry Potter and the Philosopher’s Stone", author: "J.K. Rowling" },
+    // ];
+
+    // function getAllBooks() {
+    //     return books;
+    // }
+
+    // function addBook(book) {
+    //     books.push(book);
+    // }
+
+    // function findBookById(id) {
+    //     for (const book of books) {
+    //         if (book.id === id) return book;
+    //     }
+
+    //     return null;
+    // }
+
+    // function findBookByProperty(key, value) {
+    //     for (const book of books) {
+    //         if (book[key] === value) return book;
+    //     }
+
+    //     return null;
+    // }
+
+    // console.log(getAllBooks());
+    // addBook({ id: 4, title: "Some book", author: "Unknown" });
+    // console.log(findBookById(4));
+    // console.log(findBookByProperty("title", "Dune"));
+
+
+</script>
+
+<script id="Object methods">
+
+    // const library = {
+    //     books: [
+    //         { id: 1, title: "Dune", author: "Frank Herbert" },
+    //         { id: 2, title: "The Lord of the Rings", author: "J.R.R. Tolkien" },
+    //         { id: 3, title: "Harry Potter and the Philosopher’s Stone", author: "J.K. Rowling" },
+    //     ],
+    //     getBooksCount() {
+    //         return 3;
+    //     },
+    //     addBook(book) {
+    //         // library.books.push(book);
+    //         console.log(`Added ${book.title}`);
+    //     }
+    // };
+
+    // console.log(
+    //     `There are ${library.getBooksCount()} books`
+    // );
+    
+    // // const someBook = { id: 4, title: "Book", author: "Unknown" };
+
+    // // library.addBook(someBook);
+    // library.addBook({ id: 4, title: "Book", author: "Unknown" });
+    
+</script>
+
+<script id="This keyword">
+
+    const library = {
+        books: [
+            { id: 1, title: "Dune", author: "Frank Herbert" },
+            { id: 2, title: "The Lord of the Rings", author: "J.R.R. Tolkien" },
+            { id: 3, title: "Harry Potter and the Philosopher’s Stone", author: "J.K. Rowling" },
+        ],
+        getBooksCount() {
+            return this.books.length;
+        },
+        addBook(book) {
+            this.books.push(book);
+            console.log(`Book with id ${book.id} added.`);
+        },
+        describeSelf() {
+            console.log( this ); // `this` keyword
+        },
+    };
+
+    // library.describeSelf();
+
+    // console.log("Amount of books: " + library.getBooksCount());
+    
+    // library.addBook({ id: 4, title: "Book", author: "Unknown" });
+    
+    // console.log("Amount of books: " + library.getBooksCount());
+
+    // library.describeSelf();
+
+</script>
+
+<script id="Object API for modyfing properties via method">
+
+    // const library = {
+    //     books: [
+    //         { id: 1, title: "Dune", author: "Frank Herbert" },
+    //         { id: 2, title: "The Lord of the Rings", author: "J.R.R. Tolkien" },
+    //         { id: 3, title: "Harry Potter and the Philosopher’s Stone", author: "J.K. Rowling" },
+    //     ],
+    //     findBookByProperty(key, value) {
+    //         for (const book of this.books) {
+    //             if (book[key] === value) return book;
+    //         }
+
+    //         return null;
+    //     },
+    //     changeBookTitle(oldTitle, newTitle) {
+    //         for (const book of this.books) {
+    //             if (book.title === oldTitle) {
+    //                 book.title = newTitle;
+    //             }
+    //         }
+    //     }
+    // };
+
+    // const obj = library.findBookByProperty("title", "Dune");
+    // console.log({ obj });
+
+    // library.changeBookTitle("The Lord of the Rings", "LOTR");
+    // console.log(library.books);
+    
+    // library.changeBookTitle("nothing", "something");
+    // console.log(library.books);
+
+</script>
+
+<script id="Entity bound behaviour">
+
+    // const EXP_PER_LEVEL = 100;
+    // const MONSTER_POWER = 5;
+    // const MONSTER_EXPERIENCE_REWARD = 20;
+
+    // const player = {
+    //     name: "PlayerOne",
+    //     health: 100,
+    //     level: 1,
+    //     experience: 0,
+    //     inventory: [
+    //         { name: "Wooden Shield", defense: 3 },
+    //         { name: "Wooden Sword", attack: 3 },
+    //         // { name: "Boots", defense: 3 },
+    //         { name: "Boots", defense: 1 },
+    //     ],
+    //     fight() {
+    //         const playerDefense = this.getPlayersDefense();
+
+    //         const damageDealtToPlayer = (playerDefense >= MONSTER_POWER)
+    //             ? 0
+    //             : (MONSTER_POWER - playerDefense);
+
+    //         this.health -= damageDealtToPlayer;
+
+    //         if (this.health > 0) {
+    //             this.experience += MONSTER_EXPERIENCE_REWARD;
+    //             if (this.experience >= 100) {
+    //                 // This should be a separate function.
+    //                 const newLevels = Math.floor(this.experience / EXP_PER_LEVEL)
+    //                 const remainingExperience = this.experience % EXP_PER_LEVEL;
+
+    //                 this.level += newLevels;
+    //                 this.experience = remainingExperience;
+
+                    
+    //             }
+    //         } else {
+    //             console.log("You died!");
+    //         }      
+    //     },
+    //     getPlayersDefense() {
+    //         let playerDefense = 0;
+
+    //         for (const item of this.inventory) {
+    //             // if (item.defense) {
+    //             //     playerDefense += item.defense;
+    //             // }
+
+    //             // playerDefense += item.defense ? item.defense : 0;
+                
+    //             playerDefense += item.defense ?? 0;
+    //         }
+
+    //         return playerDefense;
+    //     }
+    // };
+
+    // console.log({ def: player.getPlayersDefense() });
+
+    // for (let i=0; i<10; i++) {
+    // // for (let i=0; i<100; i++) {
+    //     player.fight();
+    // }
+
+
+</script>
+
+<script>
+
+    // Configuration
+    const EXP_PER_LEVEL = 100;
+    const MONSTER_POWER = 5;
+    const MONSTER_EXPERIENCE_REWARD = 20;
+
+    function createPlayer(name) {
+        return {
+            name,
+            health: 100,
+            level: 1,
+            experience: 0,
+            inventory: [
+                { name: "Wooden Shield", defense: 3 },
+                { name: "Wooden Sword", attack: 3 },
+                { name: "Boots", defense: 1 },
+            ],
+            fight() {
+                const playerDefense = this.getPlayersDefense();
+
+                const damageDealtToPlayer = (playerDefense >= MONSTER_POWER)
+                    ? 0
+                    : (MONSTER_POWER - playerDefense);
+
+                this.health -= damageDealtToPlayer;
+
+                if (this.health > 0) {
+                    this.experience += MONSTER_EXPERIENCE_REWARD;
+                    if (this.experience >= 100) {
+                        // This should be a separate function.
+                        const newLevels = Math.floor(this.experience / EXP_PER_LEVEL)
+                        const remainingExperience = this.experience % EXP_PER_LEVEL;
+
+                        this.level += newLevels;
+                        this.experience = remainingExperience;
+                    }
+                } else {
+                    console.log("You died!");
+                }      
+            },
+            getPlayersDefense() {
+                let playerDefense = 0;
+
+                for (const item of this.inventory) {                
+                    playerDefense += item.defense ?? 0;
+                }
+
+                return playerDefense;
+            },
+        };
+    }
+
+
+    // const playerOne = createPlayer("PlayerOne");
+    // const playerTwo = createPlayer("PlayerTwo");
+
+    // console.log({ playerOne, playerTwo });
+
+    // playerOne.fight();
+    // playerOne.fight();
+    // playerOne.fight(playerTwo);
+
+    // playerTwo.fight();
+
+    // console.log({ playerOne, playerTwo });
+
+</script>
+
+<script>
+
+    // function study() {
+    //     console.log("Study time!");
+    // }
+
+    // const student = {
+    //     name: "Adam",
+    //     study,
+    // };
+
+    // student.study();
+
+</script>
+
+<script>
+
+    // // const x = function() {}
+
+    // function studyMore() {
+    //     console.log("Study time again!");
+    // }
+
+    // const hardcoreStudent = {
+    //     name: "Beth",
+    //     study: studyMore,
+    // };
+
+    // hardcoreStudent.study();
+
+</script>
+
+<script>
+
+    const megaHardcoreStudent = {
+        name: "Cecil",
+        // study: function studyTillDeath() {
+        //     console.log("Study like a zombie!");
+        // },
+        study: function() {
+            console.log("Study like a zombie! Study like " + this.name);
+        },
+    };
+
+    megaHardcoreStudent.study();
+
+</script>
