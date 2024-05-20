@@ -1,0 +1,151 @@
+<title>Callback functions & High Order Functions</title>
+
+<script>
+
+    // function prepareMessage(name) {
+    //     return `Hello there, ${name}`;
+    // }
+
+    // console.log( prepareMessage("General Kenobi") );
+    // // console.log( `Hello there, General Kenobi` );
+
+    // console.log(prepareMessage);
+
+</script>
+
+<script>
+
+    // function smsSender(message) {
+    //     console.log(`Sending SMS: "${message}"`);
+    // }
+
+    // function emailSender(message) {
+    //     console.log(`Sending Email: "${message}"`);
+    // }
+
+
+    // // function sendMessage(name, sender) {
+    // //     const msg = `Welcome ${name}`;
+    // //     sender(msg);
+    // // }
+
+    // function sendMessage(name, sender = emailSender) {
+    //     const msg = `Welcome ${name}`;
+    //     sender(msg);
+        
+    //     // sender(`Welcome ${name}`);
+    // }
+
+
+    // sendMessage("Kuba", smsSender);
+    // // sendMessage("Kuba", emailSender);
+    // sendMessage("Kuba");
+
+</script>
+
+<script>
+
+    // function sendMessage(name, sender) {
+    //     const msg = `Welcome ${name}`;
+    //     sender(msg);
+    // }
+
+    // // sendMessage("Kuba", function customInlineSender(msg) {
+    // //     console.log(`Faxing da msg: ${msg}`);
+    // // });
+
+    // // customInlineSender("something"); // error
+
+    // sendMessage(
+    //     // name
+    //     "Kuba",
+    //     // sender
+    //     function customInlineSender(msg) {
+    //         console.log(`Faxing da msg: ${msg}`);
+    //     }
+    // );
+
+    // sendMessage("Kuba", function (message) {
+    //     console.log(message);
+    // });
+
+    // sendMessage("Kuba", function (message) { console.log(message); });
+
+</script>
+
+<script>
+
+    // const users = ["Adam", "Beth", "Cecil"];
+
+    // // for (let i=0; i<users.length; i++) {
+    // for (let i=0; i<=users.length; i++) {
+    //     // console.log(`[${i}] Hi ${users[i]}`);
+    // }
+
+
+
+    // users.forEach(function callback(user, i, array) {
+    //     // console.log( `[${i}] Hi ${user}` );
+    //     // console.log( array );
+    // });
+
+    // users.forEach(function(user, i) {
+    //     // console.log(`[${i}] Hi ${user}`);
+    // });
+
+
+
+    // function greetUser(name, i) {
+    //     console.log("Hello " + name + i);
+    // }
+
+    // users.forEach(greetUser);
+
+    // // users.forEach(console.log);
+    // users.forEach(function(_, b) { console.log(b) });
+
+</script>
+
+<script>
+
+    const numbers = [5, 4, 3, 2, 1];
+
+    function log(n) {
+        console.log("Loggin n: " + n);
+    }
+
+    numbers.forEach(log);
+
+    // numbers.forEach(function(num) {
+    //     if (num === 3) {
+    //         // continue;
+    //         // break;
+            
+    //         // return num;
+    //         return;
+    //     }
+
+    //     console.log(num);
+    // });
+
+    let stop = false;
+    numbers.forEach(function(num) {
+        if (num === 3) {
+            stop = true;
+            // return;
+        }
+
+        if (num === 1) {
+            stop = false;
+        }
+
+        if (stop) {
+            return;
+        }
+
+        console.log(num);
+    });
+
+
+
+</script>

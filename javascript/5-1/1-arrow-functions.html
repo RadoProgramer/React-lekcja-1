@@ -1,0 +1,192 @@
+<title>Arrow functions</title>
+
+<script>
+
+    // // function sum(a, b) {
+    // //     return a + b;
+    // // }
+
+    // const sum = (a, b) => {
+    //     return a + b;
+    // };
+
+    // console.log( sum(2, 3) );
+
+</script>
+
+
+<script>
+
+    // function add(a, b) {
+    //     return a + b;
+    // }
+
+    // const add = function(a, b) {
+    //     return a + b;
+    // }
+
+
+    // const add = (a, b) => {
+    //     return a + b;
+    // };
+
+    // const add = (a, b) => a + b; // implicit return
+
+    // console.log( add(2, 3) );
+
+
+
+    // const makeArray = (a, b) => [a, b];
+
+    // console.log( makeArray(2, 3) );
+
+
+
+    // // const createUser = (name, age) => {
+    // //     return { name, age };
+    // // }
+
+    // // const createUser = (name, age) => {
+    // //     name,
+    // //     age
+    // // }; // błąd
+
+    // // const createUser = (name, age) => ({
+    // //     name,
+    // //     age
+    // // });
+
+    // const createUser = (name, age) => ({ name, age });
+
+    // const user = createUser("Adam", 42);
+    // console.log(user);
+
+</script>
+
+<script>
+
+    // // function greet(name) {
+    // //     console.log(`Hello ${name}`);
+    // // }
+
+    // // const greet = (name) => {
+    // //     console.log(`Hello ${name}`);
+    // // };
+
+    // // const greet = (name) => console.log(`Hello ${name}`);
+    // const greet = name => console.log(`Hello ${name}`); // ommiting () for single argument.
+
+    // greet("Bella");
+
+</script>
+
+<script>
+
+    // // function log() {
+    // //     console.log("Something");
+    // // }
+
+    // const log = () => console.log("Something"); // no arg arrow function
+
+    // log();
+
+</script>
+
+<script>
+
+    // // function getArgs() {
+    // //     console.log(arguments);
+    // // }
+
+    // // const getArgs = () => console.log(arguments);
+    
+    // const getArgs = (...args) => console.log(args);
+    
+    // getArgs(1, 2, 3);
+
+</script>
+
+<script>
+
+    // const numbers = [3, 2, 1];
+
+    // // numbers.forEach(function(num) { console.log(num); });
+    // // numbers.forEach((num) => console.log(num));
+
+    // // const logNum = (num) => console.log(num);
+    // // numbers.forEach(logNum);
+
+    
+    // numbers.forEach(console.log);
+
+</script>
+
+<script>
+    // console.log(this.Math.random());
+
+    // const obj = {
+    //     name: "Obj_name",
+    //     funcA: function() {
+    //         // console.log(this);
+    //         console.log(this.name); // obj.name
+    //     },
+    //     funcB: () => {
+    //         // console.log(this); // window
+    //         console.log(this.name); // window.name
+    //     }
+    // };
+
+    // // obj.funcA();
+    // // obj.funcB();
+
+    // function logName() {
+    //     console.log(this.name);
+    // }
+
+    // logName();
+    // const logObjName = logName.bind(obj);
+    // logObjName();
+
+</script>
+
+<script>
+
+    // IIFE - Immediately Invoked Function Expression
+
+    // (function doSomething() {
+    //     console.log("Processing some jobs.");
+    //     console.log("Processing some jobs..");
+    //     console.log("Processing some jobs...");
+    //     console.log("Done!");
+    // })();
+
+    // (function() {
+    //     console.log("Processing some jobs.");
+    //     console.log("Processing some jobs..");
+    //     console.log("Processing some jobs...");
+    //     console.log("Done!");
+    // })();
+
+
+    
+// Program
+// const x = 1;
+// console.log("Processing some jobs.");
+// console.log("Processing some jobs..");
+// console.log("Processing some jobs...");
+// console.log("Done!");
+
+
+// const x = 2;
+
+(() => {
+    const x = 1;
+    console.log("Processing some jobs.");
+    console.log("Processing some jobs..");
+    console.log("Processing some jobs...");
+    console.log("Done!");
+})();
+
+const x = 2;
+
+</script>
