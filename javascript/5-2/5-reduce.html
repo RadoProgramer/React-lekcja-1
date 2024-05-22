@@ -1,0 +1,238 @@
+<title>Reduce - Array method</title>
+<script src="./arrays.js"></script>
+<h1>Array.reduce()</h1>
+
+<script>
+
+    // const startingValue = 0;
+
+    // const accumulated = [42, 42, 42].reduce((accumulator, element, index, array) => {
+    //     console.log({ accumulator });
+    //     return accumulator + 1;
+    // }, startingValue);
+
+    // console.log({ accumulated });
+
+</script>
+
+<script>
+
+    // const nums = [3, 2, 1];
+
+    // const sum = nums.reduce((acc, num) => acc + num, 0);
+    // console.log({ sum });
+
+</script>
+
+<script>
+
+    // const letters = ["a", "b", "c", "d", "e"];
+
+    // const joined = letters.reduce((acc, letter) => acc + letter.toUpperCase(), "");
+    // // const joined = letters.reduce((acc, letter) => `${acc}${letter.toUpperCase()}`, "");
+    // console.log({ joined });
+
+</script>
+
+<script>
+
+    // const nums = [42, 12, 25, 76, 91];
+
+    // // const doubled = nums.reduce((acc, n) => [...acc, n*2], []);
+    
+    // // mapping
+    // const doubled = nums.reduce((acc, n, i) => {
+    //     const newValue = [...acc, n*2];
+        
+    //     console.log(i, acc, n, newValue);
+
+    //     return newValue;
+    // }, []);
+    
+    
+    // console.log( doubled );
+
+</script>
+
+<script>
+
+    // const nums = [42, 12, 25, 76, 91];
+
+    // // filter
+    // const filtered = nums.reduce((acc, n) => {
+    //     if (n > 50) {
+    //         // return [...acc, n];
+    //         acc.push(n);
+    //     }
+
+    //     return acc;
+    // }, []);
+
+    // console.log( filtered );
+
+
+    // // custom reduce
+    // const reduceFilter = (arr, callback, initialValue) => {
+    //     let accumulator = initialValue;
+
+    //     for (let i=0; i<arr.length; i++) {
+    //         accumulator = callback(accumulator, arr[i], i, arr);
+    //     }
+
+    //     return accumulator;
+    // };
+
+
+    // const filtered2 = reduceFilter(nums, (acc, n) => {
+    //     return n > 50 ? [...acc, n] : acc;
+    // }, [])
+
+    // console.log(filtered2);
+
+</script>
+
+<script>
+
+    // const warriorsOver40 = players.reduce((acc, player) => {
+    //     // if (player.role === "Warrior" && player.level >= 40) {
+    //     //     return [...acc, player.name];
+    //     // }
+    //     // return acc;
+
+    //     return (player.role === "Warrior" && player.level >= 40)
+    //         ? [...acc, player.name]
+    //         : acc;
+    // }, []);
+
+    // const warriorsOver40 = players.reduce((acc, player) => 
+    //     (player.role === "Warrior" && player.level >= 40)
+    //         ? [...acc, player.name]
+    //         : acc
+    // , []);
+
+    // console.log( warriorsOver40 );
+
+</script>
+
+<script>
+
+    // const nums = [6, 3, 8, 2];
+    // // const nums = [0,0,0];
+    // // const nums = [];
+
+    // const sum = nums.reduce((acc, n) => n + acc, 0);
+    // const product = nums.reduce((acc, n) => n * acc, 1);
+    // // const max = nums.reduce((acc, n) => n > acc ? n : acc, nums[0]);
+    // const max = nums.reduce((acc, n) => n > acc ? n : acc, -Infinity);
+    // // const min = nums.reduce((acc, n) => n < acc ? n : acc, nums[0]);
+    // const min = nums.reduce((acc, n) => n < acc ? n : acc, Infinity);
+    // console.log({ sum, product, max, min });
+
+</script>
+
+<script>
+
+    // const topPlayer = players.reduce((acc, player) => {
+    //     const previousTopPlayerLevel = acc?.level ?? 0;
+
+    //     if (player.level > previousTopPlayerLevel) {
+    //         return player;
+    //     }
+
+    //     return acc;
+    // }, null);
+
+    // const topPlayer = players.reduce((acc, player) => {
+    //     if (acc === null || acc?.level === undefined) return player;
+
+    //     if (player.level > acc.level) {
+    //         return player;
+    //     }
+
+    //     return acc;
+    // }, null);
+
+    // console.log( topPlayer );
+
+</script>
+
+<script>
+
+    // // const makeUnique = (arr) => arr.filter((x, i) => arr.indexOf(x) === i);
+    // // const makeUnique = (arr) => [...new Set(arr)];
+    // const makeUnique = (arr) => Array.from(new Set(arr));
+
+    // console.log( makeUnique([1,2,3,1]) );
+
+</script>
+
+<script>
+
+    // const postTags = posts
+    //     .reduce((tags, post) => [...tags, ...post.tag], [])
+    //     .toSorted()
+    //     .filter((tag, i, arr) => arr.indexOf(tag) === i);
+
+    // console.log(postTags);
+
+</script>
+
+<script>
+
+    // const postTagsCounter = posts.reduce((tags, post) => {
+    //     post.tag.forEach(tag => {
+    //         const currentTagCount = tags[tag]; // try to get property value
+
+    //         if (currentTagCount === undefined) {
+    //             tags[tag] = 1; // initialize property
+    //         } else {
+    //             // increment value for already existing property
+    //             tags[tag] = currentTagCount + 1;
+    //         }
+    //     });
+
+    //     return tags;
+    // }, {});
+
+    const postTagsCounter = posts.reduce((tags, post) => {
+        post.tag.forEach(tag => {
+            // If tag key is present (is not undefined) in tags object,
+                // increase its value by 1,
+                // if not initialize with 1
+            
+            tags[tag] = tags[tag]
+                ? tags[tag] + 1
+                : 1;
+        });
+
+        return tags;
+    }, {});
+
+    console.log(postTagsCounter);
+
+    const uniqueTags = Object.keys(postTagsCounter);
+    console.log("Unique tags:", uniqueTags);
+
+</script>
+
+<script>
+
+    const warriorsLevelA = players
+        .reduce(
+            (totalLevel, player) =>
+                player.role === "Warrior"
+                    ? totalLevel + player.level
+                    : totalLevel
+        , 0);
+
+    const warriorsLevelB = players
+        .filter(p => p.role === "Warrior")
+        .reduce((sum, p) => sum + p.level, 0);
+
+    console.log({
+        warriorsLevelA,
+        warriorsLevelB,
+        equals: warriorsLevelA === warriorsLevelB
+    });
+
+</script>
