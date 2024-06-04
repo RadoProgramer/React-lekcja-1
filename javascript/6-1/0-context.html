@@ -1,0 +1,123 @@
+<title>This context</title>
+
+<script>
+    // console.log("\nWithout context...");
+
+    // const user = {
+    //     fullName: "Benedict Cucumber",
+    //     logName() {
+    //         console.log(user.fullName);
+    //     }
+    // };
+
+    // user.logName();
+
+    // // Copy
+    // const anotherUser = {
+    //     ...user,
+    //     fullName: "Benedict Cumberbah"
+    // };
+
+    // anotherUser.logName();
+
+
+
+    // console.log("\nWith context...");
+
+    // const contextualUser = {
+    //     fullName: "Benedict Cucumber",
+    //     logName() {
+    //         console.log(this.fullName);
+    //     }
+    // };
+
+    // contextualUser.logName();
+
+    // // Copy
+    // const anotherContextualUser = {
+    //     ...contextualUser,
+    //     fullName: "Benedict Cumberbah"
+    // };
+
+    // anotherContextualUser.logName();
+
+</script>
+
+<script>
+    // 'use strict';
+
+    // function logAge() {
+    //     console.log(this.age);
+    // }
+
+    // // logAge();
+
+    // const student = { fullName: "Matt", age: 42 };
+    // // logAge.call(student);
+    // // logAge.call({ age: 21 });
+    // // logAge.call({ });
+
+    // function printMessage(msg, messageCost = 1337) {
+    //     console.log(`Message to ${this.fullName}: ${msg} (Cost: ${messageCost} $)`);
+    // }
+
+    
+    // printMessage("Hello there");
+    // printMessage.call(student, "Hello there");
+    // printMessage.call(student, "Hello there", 123);
+
+    // const args = ["Hello there", 123];
+    // printMessage.call(student, ...args);
+
+</script>
+
+<script>
+
+    // function logAge() {
+    //     console.log(this.age);
+    // }
+
+    // logAge();
+
+    // const student = { fullName: "Matt", age: 42 };
+    // logAge.apply(student);
+
+    // function printMessage(msg, messageCost = 1337) {
+    //     console.log(`Message to ${this.fullName}: ${msg} (Cost: ${messageCost} $)`);
+    // }
+
+    
+    // printMessage("Hello there");
+    // printMessage.apply(student, ["Hello there"]);
+    // printMessage.apply(student, ["Hello there", 123]);
+
+    // const args = ["Hello there", 123];
+    // printMessage.apply(student, args);
+
+</script>
+
+<script>
+
+    const player = {
+        username: "Pedro",
+        logUserName() {
+            console.log(this.username);
+        }
+    };
+
+    player.logUserName();
+
+    const player2 = {
+        username: "Not Pedro",
+        logUserName: player.logUserName
+    };
+
+    player2.logUserName();
+
+    const logPedro = player.logUserName;
+    logPedro();
+
+    const logNotPedro = player.logUserName.bind(player2);
+    logNotPedro();
+
+</script>
