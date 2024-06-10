@@ -1,0 +1,84 @@
+<title>DOM & Query Selectors</title>
+
+<body>
+    <h1>Document Object model</h1>
+
+    <ol>
+        <li>
+            <span id="abc">First</span>
+        </li>
+        <li>
+            <span id="xyz" class="red">Second</span>
+        </li>
+        <li>
+            <span id="abc">Third</span>
+        </li>
+    </ol>
+
+    <p>Hello there</p>
+</body>
+
+<script>
+
+    // const element = document.querySelector("body > ol > li:nth-child(2) > span");
+    // const element = document.querySelector("body > ol > li > span");
+    // const element = document.querySelector("#abc");
+
+    // const element = document.getElementById("xyz");
+    // const element = document.getElementsByClassName("red");
+
+    // const list = document.querySelector("ol");
+    // const secondItemSpan = list
+    //     .querySelector("li:nth-child(2)")
+    //     .querySelector("span");
+
+    // const lastSpan = document
+    //     .querySelector("body")
+    //     .querySelector("ol")
+    //     .querySelector("li:nth-child(3)")
+    //     .querySelector("span");
+
+    // const secondSpanBetter = document.querySelector("span#xyz.red");
+
+
+
+    // // const listItems = document.querySelectorAll("li"); // NodeList - pseudotablica
+    // const listItems = document.querySelectorAll("li span"); // NodeList - pseudotablica
+
+    // // const texts = listItems.map(item => item.textContent); // error
+    // const texts = Array.from(listItems).map(item => item.textContent);
+    // console.log(texts);
+
+</script>
+
+<script>
+    const element = document.querySelector("li:nth-child(2)");
+    console.log(element);
+
+
+    // console.log(element.parentNode);
+    
+    // console.log(element.childNodes);
+    // console.log(element.children);
+    // // console.log(Array.from(element.children));
+    // console.log([...element.children].map(el => el.textContent));
+
+
+    // const secondText = element.children[0].textContent;
+    // console.log(secondText);
+
+
+    const parent = element.parentElement;
+
+    // console.log(parent.firstChild);
+    // console.log(parent.firstElementChild);
+
+    // console.log(parent.lastChild);
+    // console.log(parent.lastElementChild);
+
+    // console.log(parent.previousSibling);
+    // console.log(parent.previousElementSibling);
+    
+    console.log(parent.nextSibling);
+    console.log(parent.nextElementSibling);
+</script>
