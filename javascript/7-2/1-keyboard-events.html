@@ -1,0 +1,35 @@
+<title>Keyboard Events</title>
+
+<script>
+
+    // document.addEventListener("keydown", (event) => {
+    //     // console.log("Key pressed", event);
+    // });
+
+    // document.addEventListener("keyup", (event) => {
+    //     console.log("Key released", event);
+    // });
+
+</script>
+
+<script>
+
+    document.addEventListener("keydown", ({ key, code, ...remainingEvent }) => {
+        console.log({ key, code });
+        console.log("Deprecated old property: ", { keyCode: remainingEvent.keyCode })
+    });
+
+    document.addEventListener("keydown", ({ ctrlKey, altKey, shiftKey, metaKey }) => {
+        console.log({ ctrlKey, altKey, shiftKey, metaKey });
+    });
+
+
+    document.addEventListener("keydown", ({ ctrlKey, altKey, key }) => {
+        if (ctrlKey && key.toLowerCase() === "s") {
+            alert("Project saved!");
+        }
+
+        if (altKey && key === "F4") console.log("Won't quit on Mac ;)");
+    });
+
+</script>
