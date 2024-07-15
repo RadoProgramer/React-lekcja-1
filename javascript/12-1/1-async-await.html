@@ -1,0 +1,108 @@
+<title>Async/Await syntax</title>
+
+<main id="timer"></main>
+
+<script id="Setup">
+
+    const timer = document.querySelector("main#timer");
+    const interval = setInterval(() => {
+        const d = new Date()
+        timer.textContent = d.toLocaleTimeString() + ":" + d.getMilliseconds();
+    }, 100);
+    
+
+
+    const getPromisedValue = (value, ms = 2_000, throwRate = 0.15) => {
+        return new Promise((resolve, reject) => {
+            const shouldThrow = Math.random() <= throwRate;
+            setTimeout(() => shouldThrow ? reject("Bad Luck!") : resolve(value), ms);
+        });
+    };
+
+</script>
+
+<script id="Asynchronous callbacks - callback hell">
+
+    // getPromisedValue(42)
+    //     .then(console.log)
+    //     .catch(console.error)
+    //     .finally(() => console.log("Finito!"));
+
+
+
+    // getPromisedValue(42)
+    //     .then(x => getPromisedValue(Math.random())
+    //         .then(y => console.log(x + y))
+    //     ).catch(_ => console.log("We had an error"))
+    //     .finally(_ => console.log("Finitooo"));
+
+</script>
+
+<script id="Async/Await - Writing asynchronous code the synchronous way">
+
+    // async function processSomethingAsync() {
+    //     const x = await getPromisedValue(42);
+    //     const y = await getPromisedValue(Math.random());
+    //     console.log(x + y);
+    // }
+
+
+    // async function processSomethingAsync() {
+    //     console.log(await getPromisedValue(42) + await getPromisedValue(Math.random()));
+    // }
+
+
+    // const processSomethingAsync = async function() {
+    //     console.log(await getPromisedValue(42) + await getPromisedValue(Math.random()));
+    // };
+
+
+    // const processSomethingAsync = async () => {
+    //     console.log(await getPromisedValue(42) + await getPromisedValue(Math.random()));
+    // };
+
+
+    // processSomethingAsync();
+
+
+    // processSomethingAsync().then(() => console.log("Finito"));
+
+</script>
+
+<script id="Async functions">
+
+    // const getAnswer = async () => {
+    //     return 42;
+    // };
+
+    // console.log(getAnswer());
+
+    // getAnswer().then(answer => console.log(answer));
+    // getAnswer().then(console.log);
+
+    // (async () => {
+    //     const answer = await getAnswer();
+    //     console.log(answer);
+    // })();
+
+</script>
+
+<script id="Catching errors">
+
+    // const processSomethingAsync = async () => {
+    //     try {
+    //         const x = await getPromisedValue(42, 2_000, 0.5);
+    //         const y = await getPromisedValue(Math.random(), 3_000, 0.5);
+    //         console.log(x + y);
+    //     } catch (error) {
+    //         console.log("We had an error");
+    //     } finally {
+    //         console.log("Finitooo");
+    //     }
+    // };
+
+    // processSomethingAsync()
+    //     .then(_ => console.log("Chip chipi chapa chapa"))
+    //     .finally(_ => console.log("Dubi dubi"));
+
+</script>
