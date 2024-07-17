@@ -1,0 +1,48 @@
+<title>Pagination</title>
+
+<script type="module" id="Pagination basics">
+
+    // import axios from "https://cdn.jsdelivr.net/npm/axios@1.7.2/+esm";
+    
+    // const getPosts = (_page) => axios.get("https://jsonplaceholder.typicode.com/posts", {
+    //         params: {
+    //             _page,
+    //             _limit: 5,
+    //         }
+    //     })
+    //     .then(res => res.data);
+
+    // getPosts(1).then(console.log);
+    // getPosts(2).then(console.log);
+    // getPosts(3).then(console.log);
+
+</script>
+
+<script type="module" id="Agregating paginated data with async/await">
+
+    import axios from "https://cdn.jsdelivr.net/npm/axios@1.7.2/+esm";
+    
+    const getPostsFromPage = (_page) => axios.get("https://jsonplaceholder.typicode.com/posts", {
+            params: {
+                _page,
+                _limit: 5,
+            }
+        })
+        .then(res => res.data);
+
+
+    // const getPostsFromFirstPages = async () => [
+    //     ...await getPostsFromPage(1),
+    //     ...await getPostsFromPage(2),
+    //     ...await getPostsFromPage(3)
+    // ];
+
+    const getPostsFromFirstPages = async () => (await Promise.all([
+            getPostsFromPage(1),
+            getPostsFromPage(2),
+            getPostsFromPage(3),
+        ])).flat();
+
+    getPostsFromFirstPages().then(console.log);
+
+</script>
