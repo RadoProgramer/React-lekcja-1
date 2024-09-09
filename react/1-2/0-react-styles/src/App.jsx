@@ -10,7 +10,7 @@ import { ReactIcons } from "./8-react-icons/ReactIcons";
 
 export const App = () => (
   <>
-    {/* <StyleProp /> */}
+    <StyleProp />
     {/* <Css /> */}
     {/* <ClassComposition /> */}
     {/* <Clsx /> */}
@@ -18,6 +18,6 @@ export const App = () => (
     {/* <ReusingStyles /> */}
     {/* <CssModules /> */}
     {/* <Normalization /> */}
-    <ReactIcons />
+    {/* <ReactIcons /> */}
   </>
 );
